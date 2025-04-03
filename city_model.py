@@ -23,7 +23,7 @@ conditions = [
     (df["Green_Space"] < 30) | (df["AQI"] > 120) | (df["CO2_Emissions"] > 10),
 ]
 labels = ["Green City", "Partially Green City", "Not Green City"]
-df["City_Type"] = np.select(conditions, labels, default="Not Green City")
+df["City_Type"] = np.select(conditions, labels, default="Green City")
 
 # ✅ Train the model
 X = df[["Green_Space", "AQI", "Population_Density", "CO2_Emissions"]]
